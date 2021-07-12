@@ -1,23 +1,27 @@
-import React, {useState} from 'react';
-import {View, Text, StyleSheet, Button} from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, StyleSheet, Button } from 'react-native';
 
-const FunctionCom = () =>{
+const FunctionCom = () => {
     const [count, setCount] = useState(0);
-    return(
+
+    const updateFunctionState = () => {
+        setCount(count + 1)
+    }
+    return (
         <View style={styles.container}>
-           <Text>{count}</Text>
-                <Button
-                    onPress={()=> setCount(count + 1)}
-                    title="Update State"
-                    color='#841584'
-                />
+            <Text>{count}</Text>
+            <Button
+                onPress={() => updateFunctionState()}
+                title="Update State"
+                color='#841584'
+            />
         </View>
     );
 }
 
-export default FunctionCom;
 const styles = StyleSheet.create({
     container: {
-        padding:50
-      },
+        padding: 50
+    },
 });
+export default FunctionCom;
